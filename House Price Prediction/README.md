@@ -56,14 +56,7 @@ output : 9,272개의 input에 대한 예상 아파트 거래금액
 
 - RMSE는 예측된 값과 실제 값 간의 평균편차를 측정합니다. 아파트 매매의 맥락에서는 회귀 모델이 실제 거래 가격의 차이를 얼마나 잘 잡아내는지 측정합니다. 
 
-## 2. Components
-
-### Directory
-![스크린샷 2024-01-25 오후 8 52 25](https://github.com/UpstageAILab/upstage-ml-regression-07/assets/46295610/ecf592bd-d0a3-433e-b0da-e1e3a5de7fcf)
-
-
-
-## 3. Data descrption
+## 2. Data descrption
 
 ### Dataset overview
 
@@ -157,7 +150,7 @@ output : 9,272개의 input에 대한 예상 아파트 거래금액
 - 해당 이전 가격과 target간의 상관관계는 0.98로 매우 높았습니다.
 - 특히, 고가 아파트의 경우에는 저가 아파트와 다르게 비슷한 특성이 없기 때문에 해당 컬럼을 이용하는게 매우 주요했습니다.
   
-## 4. Modeling
+## 3. Modeling
 
 #### Train-Validation Split
 
@@ -234,7 +227,7 @@ output : 9,272개의 input에 대한 예상 아파트 거래금액
 > <Private 결과>
 - Private RMSE : 86148.2275
 
-## 5. Result
+## 4. Result
 
 ### Leader Board
 
