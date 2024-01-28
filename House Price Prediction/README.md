@@ -236,7 +236,7 @@ output : 9,272개의 input에 대한 예상 아파트 거래금액
 
 
 ### Presentation
-[패스트캠퍼스X업스테이지 AI Lab_집값 예측 대회 ML 7조.pdf](https://github.com/UpstageAILab/upstage-ml-regression-07/files/14059434/X.AI.Lab_.ML.7.pdf)
+[업스테이지 AI Lab_집값 예측 대회.pdf](https://drive.google.com/file/d/1rLKcLZ6QxLMrfo_h3RMY4oZuMC4I0aqG/view?usp=sharing)
 
 
 ## etc
@@ -244,7 +244,7 @@ output : 9,272개의 input에 대한 예상 아파트 거래금액
 ### Meeting Log
 - Notion
   
-  https://www.notion.so/7-9bf356d1cd69404681bd4a0ba7453c77
+  https://www.notion.so/AIStages-House-Price-Prediction-3be5479e2606463db321a708fd4228c9?pvs=4
 
 - 대회 마지막 주는 Zoom 실시간 미팅(10:00am ~ 19:00pm)   
 
