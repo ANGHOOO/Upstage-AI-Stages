@@ -246,7 +246,7 @@ output : 9,272개의 input에 대한 예상 아파트 거래금액
   
   https://www.notion.so/AIStages-House-Price-Prediction-3be5479e2606463db321a708fd4228c9?pvs=4
 
-- Blog
+- Blog
 
   https://anghoo-ai.tistory.com/33
 
