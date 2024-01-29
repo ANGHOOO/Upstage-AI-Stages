@@ -241,12 +241,14 @@ output : 9,272개의 input에 대한 예상 아파트 거래금액
 
 ## etc
 
-### Meeting Log
+### Notion & Blog
 - Notion
   
   https://www.notion.so/AIStages-House-Price-Prediction-3be5479e2606463db321a708fd4228c9?pvs=4
 
-- 대회 마지막 주는 Zoom 실시간 미팅(10:00am ~ 19:00pm)   
+- Blog
+
+  https://anghoo-ai.tistory.com/33
 
 ### Reference
 - Kaggle House Prices - Advanced Regression Techniques
