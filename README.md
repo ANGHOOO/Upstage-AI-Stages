@@ -1,5 +1,5 @@
 # Upstage-AI-Stages
 
 - Machine Learning : House Price Prediction
-- Computer Vision :
+- Computer Vision : Document Classification
 - Natural Language Processing : 
