@@ -14,7 +14,7 @@
 ## 1. Competiton Info
 ![스크린샷 2024-02-19 오후 8 48 57](https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/2e73550d-6fb7-459d-aa39-fcebb848d454)
 
-** 우선 데이터 저작권에 의해 해당 대회에 사용된 이미지 데이터를 첨부할 수 없어서 본 README에서는 학습 데이터에 대한 사진이 없음을 알려드립니다.
+** 우선 데이터 저작권에 의해 해당 대회에 사용된 이미지 데이터를 첨부할 수 없어서 본 README에서는 학습 데이터에 대한 사진이 없음을 알려드립니다.**
 
 ### Overview
 
