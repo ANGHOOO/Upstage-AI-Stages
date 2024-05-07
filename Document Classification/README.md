@@ -1,208 +1,136 @@
-## Team
+# Document Type Classification
+
+> 금융, 의료, 보험 등 다양한 산업 분야의 문서 처리 자동화를 위한 문서 유형 이미지 분류 모델 개발
+ 
+
+## 📝 프로젝트 개요
+
+- 문서 이미지를 분류하는 팀 프로젝트로, 17개 종류의 문서 유형을 식별하는 모델을 개발했습니다.
+
+- 문서 데이터는 금융, 의료, 보험, 물류 등 산업 전반에 가장 많은 데이터이며, 많은 대기업에서 디지털 혁신을 위해 문서 유형을 분류하고자 합니다. 이러한 문서 타입 분류는 의료, 금융 등 여러 비즈니스 분야에서 대량의 문서 이미지를 식별하고 자동화 처리를 가능케 할 수 있습니다.
+- **팀원**: 5명
+- **담당 역할**:
+    - **EDA & 데이터 전처리**: 문서의 다양한 변형과 노이즈 패턴을 분석하고, Albumentation, Augraphy 라이브러리를 이용한 Image Augmentation 적용
+    - **모델링**: ResNet 및 EfficientNet 모델을 활용한 베이스라인 구축 및 하이퍼 파라미터 튜닝, TTA를 이용한 성능 고도화
+- **팀 프로젝트 기간**: 2024년 2월 5일 ~ 2024년 2월 19일  
+- **팀 프로젝트 소속**: Upstage AI Lab
+- **팀 프로젝트 Repo**: [Document Type Classification](https://github.com/UpstageAILab/upstage-cv-classification-cv2)
+
 
-| ![이명진](https://github.com/UpstageAILab/upstage-ml-regression-07/assets/116725865/0fca01d5-ef06-429b-86b5-314c4a0844e9) | ![서재현](https://github.com/UpstageAILab/upstage-ml-regression-07/assets/116725865/df7f4ae6-afdb-4624-b130-88f68ce6ad1a) | ![신주용](https://github.com/UpstageAILab/upstage-ml-regression-07/assets/116725865/6d047df8-b648-4b4b-8180-db4d61d3a30d) | ![이영훈](https://github.com/UpstageAILab/upstage-ml-regression-07/assets/116725865/fed64993-4c58-4223-9e10-8a942e1a03c2) | ![이준형](https://github.com/UpstageAILab/upstage-ml-regression-07/assets/116725865/66b20948-1eec-4273-9eb4-9d393221cfb8) |
-| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
-|            [이명진](https://github.com/myeongwang)             |            [서재현](https://github.com/SeoJaeHyeon)             |            [신주용](https://github.com/kimddong23)             |            [이영훈](https://github.com/ANGHOOO)             |            [이준형](https://github.com/Perelman-0)             |
-|                            **팀장, EDA, Feature Engineering, Modeling**                             |                           **EDA, Feature Engineering, Modeling**                           |                         **EDA, Feature Engineering, Modeling**                           |                            **EDA, Feature Engineering, Modeling**                      |                            **EDA, Feature Engineering, Modeling**                             |
+##  🛠️ Stacks 
+ <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=NumPy&logoColor=white">
+<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white"> <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=OpenCV&logoColor=white"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"> 
 
+## 📊 Data Description
 
+### Dataset Overview
 
-##  :clipboard: Stacks 
-  <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=NumPy&logoColor=white"> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"> 
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white"> <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white"> 
+- 학습 데이터셋:
+  - train 폴더: 1570장의 이미지 
+  - train.csv: 1570개 이미지의 파일명과 정답 클래스
+- 평가 데이터셋: 
+  - test 폴더: 3140장의 이미지 
+  - sample_submission.csv: 3140개 이미지 파일명
+- meta.csv: 17개 클래스의 번호와 클래스명
 
-## 1. Competiton Info
-![스크린샷 2024-02-19 오후 8 48 57](https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/2e73550d-6fb7-459d-aa39-fcebb848d454)
+※ 데이터 저작권 문제로 인해 예시 이미지는 포함하지 않았습니다.
 
-**우선 데이터 저작권에 의해 해당 대회에 사용된 이미지 데이터를 첨부할 수 없어서 본 README에서는 학습 데이터에 대한 사진이 없음을 알려드립니다.**
+### EDA Insights
 
-### Overview
+- Train/Test 데이터 간 분포 차이 존재 
+  - Test 데이터의 주요 변형: Rotate, Crop, Flip, 겹쳐짐, 빛번짐
+  - 다양한 유형의 노이즈와 이미지 Mix-up 존재
 
-- **Document Type Classification | 문서 타입 분류**
-- computer vision domain에서 중요한 태스크인 이미지 분류 대회
+## 🔍 프로젝트 진행 단계 및 세부 과정
 
+### 1. EDA 및 문제 정의
+- Train/Test 데이터 간 분포 차이 파악
+  - Test 데이터의 주요 변형: Rotate, Crop, Flip
+  - 다양한 유형의 노이즈와 이미지 Mix-up 존재
+- 문제 정의
+  - Train/Test 데이터의 분포 불일치로 인한 모델 성능 저하
+  - 제한된 학습 데이터 환경에서의 모델 일반화 성능 확보
 
+### 2. 데이터 전처리 및 증강
+- Test 데이터와 유사한 변형 및 노이즈를 적용한 Data Augmentation 수행
+  - Rotate, Crop, Flip 등 기본 변형 적용
+  - 다양한 유형의 노이즈 패턴 탐색 및 적용
+- Data Augmentation을 통한 학습 데이터 확장
+  - 2.5만 이미지 데이터 → 5만 이미지 데이터
 
-![스크린샷 2024-02-19 오후 7 45 13](https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/60af49f0-8e8b-45b3-ad96-10a0d45f955d)
+### 3. 모델링 및 학습
+- Backbone Model 선정
+  - ResNet50, EfficientNet 계열의 다양한 모델 실험
+  - 데이터 특성 및 리소스 제약을 고려하여 EfficientNet-B4 선정
+- 모델 학습 및 검증
+  - K-fold Ensemble, Stratified K-fold 등 다양한 학습 전략 적용
+  - 하이퍼파라미터 튜닝, Learning Rate Scheduling, TTA 등을 통한 모델 최적화
 
-이미지 분류란 주어진 이미지를 여러 클래스 중 하나로 분류하는 작업입니다. 
-이러한 이미지 분류는 의료, 패션, 보안 등 여러 현업에서 기초적으로 활용되는 태스크입니다. 
-딥러닝과 컴퓨터 비전 기술의 발전으로 인한 뛰어난 성능을 통해 현업에서 많은 가치를 창출하고 있습니다.
+### 4. 모델 평가 및 분석
+- 학습된 모델의 성능 평가
+  - LB F1-score 기준 모델 성능 비교 및 분석
+- 모델 예측 결과 분석
+  - 잘 분류하지 못하는 클래스 파악 및 원인 분석
+- 추가 개선 방향 도출  
 
-그 중, 이번 대회는 문서 타입 분류를 위한 이미지 분류 대회입니다. 
-문서 데이터는 금융, 의료, 보험, 물류 등 산업 전반에 가장 많은 데이터이며, 많은 대기업에서 디지털 혁신을 위해 문서 유형을 분류하고자 합니다. 
-이러한 문서 타입 분류는 의료, 금융 등 여러 비즈니스 분야에서 대량의 문서 이미지를 식별하고 자동화 처리를 가능케 할 수 있습니다.
+### 5. 결과 정리 및 제출
+- 최종 모델 선정 및 결과 정리
+  - 각 실험 결과 종합 및 최종 모델 선정
+- 리더보드 제출 및 순위 확인
+  - 최종 모델의 예측 결과를 제출하고 순위 확인
 
-이번 대회에 사용될 데이터는 총 17개 종의 문서로 분류되어 있습니다. 
-1570장의 학습 이미지를 통해 3140장의 평가 이미지를 예측하게 됩니다. 
-특히, 현업에서 사용하는 실 데이터를 기반으로 대회를 제작하여 대회와 현업의 갭을 최대한 줄였습니다. 또한 현업에서 생길 수 있는 여러 문서 상태에 대한 이미지를 구축하였습니다.
+## 🏆 Results
 
+| Solution | LB F1-score |
+|:--------:|:-----------:|
+| ResNet50 (Baseline) | 0.8583 |
+| Data Augmentation (2.5만 -> 5만) | 0.8692 -> 0.9340 |
+| EfficientNet-B4 | 0.9040 |
+| K-fold Ensemble | 0.9293 |
+| Selective Multi-Class Classification | 0.9158 |
 
-이번 대회를 통해서 문서 타입 데이터셋을 이용해 이미지 분류를 모델을 구축합니다. 
-주어진 문서 이미지를 입력 받아 17개의 클래스 중 정답을 예측하게 됩니다. 
-computer vision에서 중요한 backbone 모델들을 실제 활용해보고, 좋은 성능을 가지는 모델을 개발할 수 있습니다. 
-그 밖에 학습했던 여러 테크닉들을 적용해 볼 수 있습니다.
+- Data Augmentation과 Backbone Model 변경, 각종 기법 적용을 통해 LB F1-score 0.8583 -> 0.9692 향상
+- 최종 순위 4위 (상위 10%) 달성
 
-본 대회는 결과물 csv 확장자 파일을 제출하게 됩니다.
+## 📜 Conclusion
 
-- input : 3140개의 이미지
+- 철저한 EDA를 통한 데이터 특성 파악과 그에 기반한 Data Augmentation 전략이 성능 향상에 크게 기여
+- Backbone Model 탐색을 통해 EfficientNet 계열 모델이 제한된 리소스 환경에서도 좋은 성능을 보임을 확인
+- 다양한 기법 적용 실험과 검증을 통해 모델 성능 극대화 
+- Divide & Conquer 전략을 통한 체계적인 문제 해결 과정의 중요성 인지
 
-- output : 주어진 이미지의 클래스
+## 🌟 잘했던 점
 
+- 프로젝트 구조화와 구글 스프레드시트를 통해 효율적으로 실험할 수 있도록 설계하였다.
+- EDA, Data Preprocessing, Modeling, Inference의 Computer Vision Task의 파이프라인을 반복적으로 수행하며 가설을 입증하며 성능 향상을 이루었다.  
+- 팀원들 중 누구 하나 불평불만 없이 서로의 의견을 존중해 주었고 모두 다 열심히 참여해서 좋은 분위기 속에서 대회를 마무리하였다.
 
-### Timeline
+## 😥 시도했으나 잘 되지 않았던 것들
 
-- ex) February 05, 2024 - Start Date
-- ex) February 19, 2024 - Final submission deadline
+- 비교적 최신 모델인 ViT 계열 모델들을 학습해 보았지만 성능이 잘 나오지 않았다.
+- Inference 분석 단계에서 우리의 모델이 잘 맞추지 못하는 클래스에 대해 따로 학습시키는 방식인 Selective Multi-Class Classification을 수행하였지만 생각보다 큰 성능 향상을 이루지 못하였다.
 
-### Evaluation
+## 😢 한계점 및 아쉬웠던 점들
 
-- 평가지표 : Macro F1
+- 상위권 팀들의 솔루션을 분석한 결과 기존에 잘 알려진 모델들이 아닌 최신 논문을 읽고 모델을 구현하여 성능 향상을 이룬 팀이 있었는데 기존 SOTA 모델들의 사용에 집중한 것 같아 아쉬움이 남는다. 
+- 이전 Tabular Data 경진대회에 비해 학습 시간이 엄청 오래 걸려서 생각보다 다양한 실험을 못한 것이 아쉽고, 컴퓨팅 자원의 중요성을 느낄 수 있었다.
+- 연휴 기간에 진행한 대회여서 시간이 많이 부족해서 모델 앙상블을 진행하지 못한 점이 매우 아쉽다.
 
-F1 score는 Precision과 Recall의 조화 평균을 의미합니다. 클래스마다 개수가 불균형할 때 모델의 성능을 더욱 정확하게 평가할 수 있습니다.
-수식은 다음과 같습니다.
+## 💡 경진대회를 통해 배운 점 또는 시사점
 
-![스크린샷 2024-02-19 오후 8 23 52](https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/b2a29c3b-86fe-49fe-b361-67b80ae859a2)
+- Computer Vision Project의 전반적인 파이프라인을 경험해 볼 수 있었다.  
+- 다양한 Augmentation 기법을 배웠고 이를 적용해 보고 실험할 수 있었다.
+- CNN Backbone 모델과 Transformer 계열 모델의 차이를 알 수 있었고 각 모델들의 특성에 대해 자세히 배울 수 있었다.
 
-[참고자료] https://www.linkedin.com/pulse/understanding-confusion-matrix-tanvi-mittal/
+## 🔮 What's Next
+- 실험 과정과 결과에 대한 문서화 강화 
+- Vision Transformer 등 대용량 데이터에서 강점을 보이는 모델 아키텍처 적용 및 검증
+- 실제 비즈니스 데이터 확보를 통한 모델의 산업 적용 가능성 타진
 
-Macro F1 score는 multi classification을 위한 평가 지표로 클래스 별로 계산된 F1 score를 단순 평균한 지표입니다. 
+## 🔗 Reference
+- [Intriguing Properties of Vision Transformers](https://arxiv.org/pdf/2105.10497.pdf)
+- [Mixed-Precision Training of Deep Neural Networks](https://developer.nvidia.com/blog/mixed-precision-training-deep-neural-networks/)
 
+## 📁 Project Management
 
-## 2. Data descrption
-
-### Dataset overview
-
-#### 학습 데이터셋 정보
-
-주어진 학습 데이터에 대한 정보는 다음과 같습니다.
-
-- train [폴더]: 1570장의 이미지가 저장되어 있습니다.
-
-- train.csv [파일]: 1570개의 행으로 이루어져 있습니다. train/ 폴더에 존재하는 1570개의 이미지에 대한 정답 클래스를 제공합니다.
-
-- ID: 학습 샘플의 파일명
-
-- target: 학습 샘플의 정답 클래스 번호
-
-- meta.csv [파일]:17개의 행으로 이루어져 있습니다.
-- target 17개의 클래스 번호입니다.
-- class_name 클래스 번호에 대응하는 클래스 이름입니다.
-
-#### 평가 데이터셋 정보
-
-평가 데이터에 대한 정보는 다음과 같습니다.
-
-- test [폴더]: 3140장의 이미지가 저장되어 있습니다.
-
-- sample_submission.csv [파일]: 3140개의 행으로 이루어져 있습니다.
-
-- ID 평가 샘플의 파일명이 저장되어 있습니다.
-
-- target 예측 결과가 입력될 컬럼입니다. 값이 전부 0으로 저장되어 있습니다.
-
-- 그 밖에 평가 데이터는 학습 데이터와 달리 랜덤하게 Rotation 및 Flip 등이 되었고 훼손된 이미지들이 존재합니다.
-
-
-### EDA 
-#### 정의된 문제 해결을 위해 테스트 데이터에 적용되어 있는 변형에는 어떤 것이 있는지를 중점적으로 파악
-
-- 문서 자체의 변형에는 Rotate, Crop, Flip이 많은 부분을 차지
-
-
-- 다양한 유형의 노이즈가 있었고, 다른 유형의 이미지가 Mix-up 되어 있는 경우도 존재
-
-
-### 문제 해결방향
-
-> Rotate, Crop, Flip을 기본적으로 진행하고 테스트 데이터와 유사한 노이즈 패턴을 찾아서 적용하자.
-
-  > 위 데이터를 잘 학습할 수 있는 BackBone Model를 찾고, 여러 기법을 통해 모델의 성능을 높이자
-
-## 4.Soulution 01 - Data Augmentation
-
-<img width="1015" alt="스크린샷 2024-02-19 오후 8 33 11" src="https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/4bdab723-70ea-48c1-81f9-235226721bd0">
-
-- 실제 초반에는 2.5만개 학습데이터를 구축하고 기본 모델을 돌린 결과, 0.6206 -> 0.8692로 증가
-- 추가로 최종 5만개를 학습한 결과, 0.8692 -> 0.9340으로 증가해서 Valid data 지표와 리더보드상의 지표의 간격을 낮출 수 있었습니다.
-
-<img width="833" alt="스크린샷 2024-02-19 오후 8 33 37" src="https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/168cc5ee-063d-4861-8f40-6883d70726a1">
-
-
-
-## 5.Soulution 02 - BACKBONE MODEL
-
-- 기존 Baseline으로 설정한 ResNet50 모델의 경우 리더보드 기준 f1 score가 0.86 근처에서 좀처럼 향상이 되지 않음.
-- 여러 backbone model(EfficientNet, Resnet101, ViT Model) 테스트 결과, depth, width, resolution에 대해
-  compound-scaling 방식을 통해 balance 하게 uniform한 값으로 scale-up 해주는 방식인 EfficientNet 사용이 학습 시간/ 성능 관점에서 높게 나옴
-- 모델의 크기가 늘어남에 따라 입력 이미지의 사이즈도 늘려주는 방식을 통해 ResNet50 일 때 LB : 0.8583에서 EfficientNet_B4 LB : 0.9040으로 향상
-  
-    <img width="728" alt="스크린샷 2024-02-19 오후 8 36 52" src="https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/1c853c0e-e027-475a-8c44-d9f90e8a7073">
-
-<img width="794" alt="스크린샷 2024-02-19 오후 8 35 31" src="https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/e2501d8a-86fc-4314-93a0-c6c44c1b2db0">
-
-## 6. Soulution 03 - TECHNIQUES
-
-- #### HYPER PARAMETER TUNING 
-  
-<img width="612" alt="스크린샷 2024-02-19 오후 8 38 41" src="https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/417eb1f7-9aa8-4cf5-a1ca-4c8366e95603">
-
-- #### LEARNING RATE SCHEDULER
-
-<img width="694" alt="스크린샷 2024-02-19 오후 8 39 02" src="https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/ac0ec76e-bc51-441e-bace-ace699b4313e">
-
-- #### SELECTIVE MULTI-CLASS CLASSIFICATION
-
-<img width="693" alt="스크린샷 2024-02-19 오후 8 39 49" src="https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/116725865/0af63908-9622-4236-a4e1-d20d44cd4833">
-
-- #### K-FOLD ENSEMBLE
-  
-<img width="649" alt="스크린샷 2024-02-19 오후 8 40 15" src="https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/189add39-2fc6-4f4e-b94f-4b1945c538b2">
-
-- #### MIXED PRECISION TRAINING
-
-<img width="425" alt="스크린샷 2024-02-19 오후 8 40 48" src="https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/d214d5d1-b773-4331-9102-27b009496a87">
-
-- #### TTA
-
-<img width="1027" alt="스크린샷 2024-02-19 오후 8 41 13" src="https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/a066992f-78b7-4966-9e8e-55088d9f1dc7">
-
-- #### VISON TRANSFORMER
-
-## 7. Result
-
-### Leader Board
-
-#### Private LB
-
-![스크린샷 2024-02-20 오후 8 15 16](https://github.com/UpstageAILab/upstage-cv-classification-cv2/assets/46295610/4379fa03-a16f-4ca7-bbe8-1f4a2658c8a6)
-
-
-
-### Presentation
-
-[CV 2조 발표자료 pdf.pdf](https://github.com/UpstageAILab/upstage-cv-classification-cv2/files/14330590/CV.2.pdf.pdf)
-
-
-## etc
-
-### Meeting Log
-- Notion
-  
-  https://www.notion.so/e7e7e43d3c8f47e7b0205de5c1d688ad?v=90279b42a3c04fc09048647a696dbf0d
-
-- 제출 및 실험 기록
-  
-  https://docs.google.com/spreadsheets/d/1iyIL6euOwvQgpm0kUp4lYCq8qOL-CKlKiaClfn8ZcTw/edit#gid=0  
-
-- 대회 마지막 주는 Zoom 실시간 미팅(10:00am ~ 19:00pm)   
-
-### Reference
-- Intriguing Properties of Vision Transformers
-
-  https://arxiv.org/pdf/2105.10497.pdf
-
-- Mixed-Precision Training of Deep Neural Networks
-
-  https://developer.nvidia.com/blog/mixed-precision-training-deep-neural-networks/  
-  
+- [제출 기록 스프레드시트](https://docs.google.com/spreadsheets/d/1iyIL6euOwvQgpm0kUp4lYCq8qOL-CKlKiaClfn8ZcTw/edit#gid=0)
