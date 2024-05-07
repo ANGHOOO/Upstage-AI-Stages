@@ -82,7 +82,8 @@
 
 
 
-![alt text](image-1.png)
+![image](https://github.com/ANGHOOO/Upstage-AI-Stages/assets/103275370/fd0cb685-33f9-4b53-9eaa-9ab902fbb590)
+
 
 ## 🏆 Results
 
