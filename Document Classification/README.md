@@ -79,6 +79,8 @@
 - 리더보드 제출 및 순위 확인
   - 최종 모델의 예측 결과를 제출하고 순위 확인
 
+<img width="962" alt="image" src="https://github.com/ANGHOOO/Upstage-AI-Stages/assets/103275370/f28af955-9d57-4edb-a71f-4b239705d393">
+
 ## 🏆 Results
 
 | Solution | LB F1-score |
