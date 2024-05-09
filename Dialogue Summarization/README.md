@@ -87,15 +87,18 @@
 
 ## 🏆 Results
 
-| Model | LB Rouge-1 F1 | 
-|:-----:|:-------------:|
-| BART-r3f | 0.2066 |
-| KoBART-summary-v1 | 0.4996 |
-| KoBART-summary-v2 | 0.5101 |
-| KoBART-base-v1 (Baseline) | 0.5088 |
+| Model | Final Result | LB Rouge1 | LB Rouge2 | LB Rouge L | 
+|:-----:|:------------:|:---------:|:---------:|:----------:|
+| KoBART-base-v1 (Baseline) | 41.5032 | 0.5088 | 0.3141 | 0.4221 |
+| BART-r3f | 15.7081 | 0.2066 | 0.1000 | 0.1647 |
+| KoBART-summary-v1 | 40.4117 | 0.4996 | 0.3029 | 0.4099 |
+| KoBART-summary-v2 | 41.4013 | 0.5101 | 0.3160 | 0.4160 |
+
 
 - Baseline 모델인 KoBART-base-v1 모델 대비 KoBART-summary-v2 모델의 Rouge-1 F1 Score 0.0013 향상
 - 영어 데이터셋 기반 BART 계열 모델은 성능이 현저히 낮음
+- 최종 순위 8위 달성
+<img width="961" alt="image" src="https://github.com/ANGHOOO/Upstage-AI-Stages/assets/103275370/4bda31c2-c9fa-41e5-8ab1-35e7e5c79174">
 
 ## 📜 Conclusion
 
@@ -126,7 +129,7 @@
 - 다양한 데이터 증강 기법들을 배우고 실제로 적용해볼 수 있는 기회였다.
 - 팀원들과의 협업을 통해 문제 해결 능력과 커뮤니케이션 스킬을 기를 수 있었다.
 
-## 🔮 앞으로 할 수 있는 연구 방향 제안  
+## 🔮 What's Next  
 
 - 대화의 문맥 정보와 화자의 감정을 반영할 수 있는 모델 아키텍처 연구
 - Multilingual 모델을 활용한 영어-한국어 간 번역 및 요약 생성 파이프라인 구축  
