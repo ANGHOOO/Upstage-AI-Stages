@@ -56,8 +56,8 @@
   - Rotate, Crop, Flip 등 기본 변형 적용
   - 다양한 유형의 노이즈 패턴 탐색 및 적용
 - Data Augmentation을 통한 학습 데이터 확장
-  - 2.5만 이미지 데이터 → 5만 이미지 데이터
-
+  - 1570개 이미지 데이터 → 52608개 이미지 데이터
+    
 ### 3. 모델링 및 학습
 - Backbone Model 선정
   - ResNet50, EfficientNet 계열의 다양한 모델 실험
@@ -85,14 +85,17 @@
 
 | Solution | LB F1-score |
 |:--------:|:-----------:|
-| ResNet50 (Baseline) | 0.8583 |
-| Data Augmentation (2.5만 -> 5만) | 0.8692 -> 0.9340 |
+| ResNet50 (Baseline) | 0.3806 |
+| Data Augmentation (1570 -> 2.5만) | 0.6206 -> 0.8692 |
 | EfficientNet-B4 | 0.9040 |
-| K-fold Ensemble | 0.9293 |
 | Selective Multi-Class Classification | 0.9158 |
+| K-fold Ensemble | 0.9293 |
+| Data Augmentation (2.5만 -> 5만) | 0.8692 -> 0.9340 |
+| Test Time Augmentation | 0.9379 |
 
-- Data Augmentation과 Backbone Model 변경, 각종 기법 적용을 통해 LB F1-score 0.8583 -> 0.9692 향상
-- 최종 순위 4위 (상위 10%) 달성
+- Albumentation, Augraphy 라이브러리를 이용한 Data Augmentation과 EfficientNetB4로 Backbone Model 변경, 성능 향상을 위한 Ensemble, TTA 적용을 통해 최종 Private LB F1-score 0.9400 달성
+- 최종 순위 5위 (상위 10%) 달성
+<img width="782" alt="image" src="https://github.com/ANGHOOO/Upstage-AI-Stages/assets/103275370/7e89531a-0bcb-4eeb-b8b4-5ecf0322f29d">
 
 ## 📜 Conclusion
 
