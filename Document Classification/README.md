@@ -95,7 +95,8 @@
 
 - Albumentation, Augraphy 라이브러리를 이용한 Data Augmentation과 EfficientNetB4로 Backbone Model 변경, 성능 향상을 위한 Ensemble, TTA 적용을 통해 최종 Private LB F1-score 0.9400 달성
 - 최종 순위 5위 (상위 10%) 달성
-<img width="779" alt="image" src="https://github.com/ANGHOOO/Upstage-AI-Stages/assets/103275370/bc587aa0-657c-473c-8d62-cadcb7721bf1">
+<img width="1095" alt="image" src="https://github.com/ANGHOOO/Upstage-AI-Stages/assets/103275370/c7f5bd4f-6975-4780-9059-8d284e52c94d">
+
 
 ## 📜 Conclusion
 
