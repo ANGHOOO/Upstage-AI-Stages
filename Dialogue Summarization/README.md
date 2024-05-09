@@ -98,7 +98,8 @@
 - Baseline 모델인 KoBART-base-v1 모델 대비 KoBART-summary-v2 모델의 Rouge-1 F1 Score 0.0013 향상
 - 영어 데이터셋 기반 BART 계열 모델은 성능이 현저히 낮음
 - 최종 순위 8위 달성
-<img width="961" alt="image" src="https://github.com/ANGHOOO/Upstage-AI-Stages/assets/103275370/4bda31c2-c9fa-41e5-8ab1-35e7e5c79174">
+<img width="1049" alt="image" src="https://github.com/ANGHOOO/Upstage-AI-Stages/assets/103275370/a6729ef1-7d92-4218-aa8d-580b3ef9b3bd">
+
 
 ## 📜 Conclusion
 
